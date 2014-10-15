@@ -1,0 +1,39 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+.landing.container {
+    margin-top: 4em;
+    @include outer-container;
+
+    .login-logo {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+    }
+
+    .title, .subtitle {
+        letter-spacing: 2px;
+        font-family: 'Shadows Into Light Two', cursive;
+        text-align: center;
+    }
+
+    .subtitle {
+        color: $muted-text;
+    }
+
+    .login-form {
+        @include span-columns(4);
+        @include shift(4);
+
+        .submit-login {
+            float: right;
+            @include button;
+        }
+
+        .forgot-password {
+            font-size: $small-font;
+        }
+    }
+
+}
+

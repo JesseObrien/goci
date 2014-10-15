@@ -1,0 +1,4 @@
+.sass-cache/
+fresh
+tmp/
+*.lock

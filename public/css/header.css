@@ -1,0 +1,67 @@
+/*
+Error: Undefined variable: "$dark-gray".
+        on line 3 of sass/header.scss
+
+1: header.navigation {
+2:   $navigation-padding: 1em;
+3:   $navigation-background: $dark-gray;
+4:   $navigation-color: transparentize(white, 0.3);
+5:   $navigation-color-hover: white;
+6:   $navigation-height: 60px;
+7:   $navigation-nav-button-background: $base-accent-color;
+8:   $navigation-nav-button-background-hover: lighten($navigation-background, 10);
+
+Backtrace:
+sass/header.scss:3
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/script/tree/variable.rb:49:in `_perform'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/script/tree/node.rb:50:in `perform'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:458:in `visit_variable'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:420:in `map'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/stack.rb:79:in `block in with_base'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/stack.rb:115:in `with_frame'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/stack.rb:79:in `with_base'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:489:in `update_stylesheet'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:469:in `on_file_changed'
+/usr/lib/ruby/gems/2.1.0/gems/sass-3.4.5/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/home/jesse/.gem/ruby/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `call'
+/home/jesse/.gem/ruby/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:276:in `_process_changes'
+/home/jesse/.gem/ruby/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:233:in `block in _wait_for_changes'
+/home/jesse/.gem/ruby/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `loop'
+/home/jesse/.gem/ruby/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:216:in `_wait_for_changes'
+/home/jesse/.gem/ruby/2.1.0/gems/listen-2.7.9/lib/listen/listener.rb:312:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$dark-gray\".\A         on line 3 of sass/header.scss\A \A 1: header.navigation {\A 2:   $navigation-padding: 1em;\A 3:   $navigation-background: $dark-gray;\A 4:   $navigation-color: transparentize(white, 0.3);\A 5:   $navigation-color-hover: white;\A 6:   $navigation-height: 60px;\A 7:   $navigation-nav-button-background: $base-accent-color;\A 8:   $navigation-nav-button-background-hover: lighten($navigation-background, 10);"; }

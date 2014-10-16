@@ -1888,6 +1888,10 @@ input[type="submit"] {
   content: ""; }
 
 /** Application Variables **/
+/** Navigation **/
+body {
+  margin: 0px; }
+
 header.navigation {
   background-color: #333333;
   border-bottom: 1px solid #1a1a1a;
@@ -1912,7 +1916,10 @@ header.navigation {
     float: left;
     max-height: 60px;
     padding-left: 1em;
-    padding-right: 2em; }
+    padding-right: 2em;
+    line-height: 60px;
+    font-size: 20px;
+    color: white; }
     header.navigation .logo img {
       max-height: 60px;
       padding: .8em 0; }
@@ -2071,25 +2078,25 @@ header.navigation {
         background: transparent;
         float: right;
         clear: none; } }
-  header.navigation a.sign-up {
+  header.navigation a.nav-button {
     margin-top: 1.2em;
     float: right;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     display: inline;
-    background: #ddd;
+    background: #333333;
     border-radius: 3px;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     font-size: .8em;
     font-weight: 800;
     text-transform: uppercase;
     padding: .4em .5em; }
     @media screen and (min-width: 64em) {
-      header.navigation a.sign-up {
+      header.navigation a.nav-button {
         padding: .5em 1em; } }
-    header.navigation a.sign-up:hover {
-      background: #f7f7f7; }
+    header.navigation a.nav-button:hover {
+      color: white; }
   header.navigation .search-bar {
     padding: .85em .6em;
     float: left; }
@@ -2141,7 +2148,6 @@ header.navigation {
         right: 0.3em;
         bottom: 0.3em;
         left: auto;
-        outline: none;
         padding: 0 15px; }
         header.navigation .search-bar .search-and-submit button[type=submit]:hover:not(:disabled) {
           box-shadow: inset 0 1px 0 0 #666666;
@@ -2178,6 +2184,52 @@ header.navigation {
           box-sizing: border-box;
           display: block; } }
 
+header.sub-navigation {
+  background-color: white;
+  border-bottom: 1px solid #e6e6e6;
+  height: 60px;
+  width: 100%;
+  z-index: 999; }
+  header.sub-navigation .navigation-wrapper {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 9999; }
+    header.sub-navigation .navigation-wrapper:after {
+      content: "";
+      display: table;
+      clear: both; }
+    header.sub-navigation .navigation-wrapper:after {
+      content: "";
+      display: table;
+      clear: both; }
+    header.sub-navigation .navigation-wrapper h1 {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 82.94039%;
+      margin-right: 0;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 60px; }
+      header.sub-navigation .navigation-wrapper h1:last-child {
+        margin-right: 0; }
+      header.sub-navigation .navigation-wrapper h1 a:hover {
+        text-decoration: underline; }
+      header.sub-navigation .navigation-wrapper h1 a.active {
+        font-weight: bold; }
+      header.sub-navigation .navigation-wrapper h1 .breadcrumb-divider {
+        margin: 0 0.25em; }
+    header.sub-navigation .navigation-wrapper .tools {
+      line-height: 60px;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 14.70196%; }
+      header.sub-navigation .navigation-wrapper .tools:last-child {
+        margin-right: 0; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2192,25 +2244,21 @@ header.navigation {
     content: "";
     display: table;
     clear: both; }
-  .landing.container .login-logo {
-    display: block;
-    margin: 0 auto;
-    width: 300px; }
   .landing.container .title, .landing.container .subtitle {
     letter-spacing: 2px;
     font-family: 'Shadows Into Light Two', cursive;
     text-align: center; }
   .landing.container .subtitle {
     color: #999; }
-  .landing.container .login-form {
+  .landing.container .login.container {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%;
     margin-left: 34.11922%; }
-    .landing.container .login-form:last-child {
+    .landing.container .login.container:last-child {
       margin-right: 0; }
-    .landing.container .login-form .submit-login {
+    .landing.container .login.container .submit-login {
       float: right;
       border: 1px solid #076fe4;
       border-radius: 3px;
@@ -2226,19 +2274,56 @@ header.navigation {
       text-decoration: none;
       text-shadow: 0 1px 0 #0065d6;
       background-clip: padding-box; }
-      .landing.container .login-form .submit-login:hover:not(:disabled) {
+      .landing.container .login.container .submit-login:hover:not(:disabled) {
         box-shadow: inset 0 1px 0 0 #60a2ec;
         cursor: pointer;
         background-color: #2f87ea;
         background-image: -webkit-linear-gradient(#2f87ea, #086fe3);
         background-image: linear-gradient(#2f87ea, #086fe3); }
-      .landing.container .login-form .submit-login:active:not(:disabled), .landing.container .login-form .submit-login:focus:not(:disabled) {
+      .landing.container .login.container .submit-login:active:not(:disabled), .landing.container .login.container .submit-login:focus:not(:disabled) {
         border: 1px solid #076fe4;
         box-shadow: inset 0 0 8px 4px #0868d3, inset 0 0 8px 4px #0868d3; }
-      .landing.container .login-form .submit-login:disabled {
+      .landing.container .login.container .submit-login:disabled {
         opacity: 0.5;
         cursor: not-allowed; }
-    .landing.container .login-form .forgot-password {
+    .landing.container .login.container .forgot-password {
       font-size: 80%; }
+  .landing.container form.form.login {
+    margin-top: 3em; }
+
+.panel {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
+  .panel:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+ul.build.list {
+  list-style: none;
+  width: 100%; }
+  ul.build.list li {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    ul.build.list li .stats {
+      position: absolute;
+      right: 0;
+      top: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #999; }
+    ul.build.list li h3.name {
+      font-size: 20px; }
+    ul.build.list li p.description {
+      color: #555;
+      font-size: 14px;
+      margin-top: 10px;
+      max-width: 500px; }
 
 /*# sourceMappingURL=app.css.map */

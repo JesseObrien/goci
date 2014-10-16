@@ -5,12 +5,6 @@
     margin-top: 4em;
     @include outer-container;
 
-    .login-logo {
-        display: block;
-        margin: 0 auto;
-        width: 300px;
-    }
-
     .title, .subtitle {
         letter-spacing: 2px;
         font-family: 'Shadows Into Light Two', cursive;
@@ -21,7 +15,7 @@
         color: $muted-text;
     }
 
-    .login-form {
+    .login.container {
         @include span-columns(4);
         @include shift(4);
 
@@ -34,6 +28,10 @@
             font-size: $small-font;
         }
     }
+
+	form.form.login {
+		margin-top: 3em;
+	}
 
 }
 

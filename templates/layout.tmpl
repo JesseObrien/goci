@@ -8,14 +8,12 @@
 <body>
     <header class="navigation">
       <div class="navigation-wrapper">
-        <a href="javascript:void(0)" class="logo">
-          <img src="http://placehold.it/75/75" alt="Logo Image">
-        </a>
+        <a href="/" class="logo">goci</a>
         <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
         <div class="nav">
           <ul id="navigation-menu">
-            <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-            <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
+            <li class="nav-link"><a href="javascript:void(0)">Builds</a></li>
+    <!--        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
             <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
             <li class="nav-link more"><a href="javascript:void(0)">More</a>
               <ul class="submenu">
@@ -34,7 +32,7 @@
                   </ul>
                 </li>
               </ul>
-            </li>
+            </li>-->
           </ul>
         </div>
         <div class="navigation-tools">
@@ -46,13 +44,26 @@
               </button>
             </div>
           </div>
-          <a href="javascript:void(0)" class="sign-up">Sign Up</a>
+          <a href="javascript:void(0)" class="nav-button sign-in"><i class="fa fa-btn fa-sign-out"></i> Sign Out</a>
         </div>
       </div>
     </header>
+	<header class="sub-navigation">
+		<div class="navigation-wrapper">
+			<h1>
+				<a class="crumb" href="/builds">{{ .Pagename }}</a>
+	<!--			<span class="breadcrumb-divider">/</span>
+				<a href="/builds/1" class="crumb active">SEFAT Development</a>-->
+			</h1>
+			<div class="tools">
+				<a href="#" id="new-build"><i class="fa fa-btn fa-plus"></i> New Build</a>
+			</div>
+		</div>
+	</header>
 
-
-
+	<div class="page container">
+		{{ yield }}
+	</div>
     <script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
 </body>

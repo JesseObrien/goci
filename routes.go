@@ -78,11 +78,19 @@ func (r *Routes) Logout(w http.ResponseWriter, req *http.Request) {
 	http.Redirect(w, req, "/", http.StatusFound)
 }
 
+type NavItem struct {
+	Label  string
+	Url    string
+	Active bool
+}
+
 func (r *Routes) Builds(w http.ResponseWriter, req *http.Request) {
 	data := struct {
 		Pagename string
+		Subnav   []NavItem
 	}{
 		"Builds",
+		[]NavItem{NavItem{Label: "Builds", Url: "/builds", Active: true}},
 	}
 	r.LayoutRender(w, http.StatusOK, "builds", data)
 }

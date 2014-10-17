@@ -51,9 +51,13 @@
 	<header class="sub-navigation">
 		<div class="navigation-wrapper">
 			<h1>
-				<a class="crumb" href="/builds">{{ .Pagename }}</a>
-	<!--			<span class="breadcrumb-divider">/</span>
-				<a href="/builds/1" class="crumb active">SEFAT Development</a>-->
+			{{ $subnav := .Subnav }}
+				{{ range .Subnav }}
+					<a class="crumb" href="{{ .Url }}">{{ .Label }}</a>
+					{{ if gt (len $subnav) 1 }}
+					<span class="breadcrumb-divider">/</span>
+					{{ end }}
+				{{ end }}
 			</h1>
 			<div class="tools">
 				<a href="#" id="new-build"><i class="fa fa-btn fa-plus"></i> New Build</a>

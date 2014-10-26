@@ -1,0 +1,31 @@
+<div class="modal">
+  <label class="btn" for="newbuild"><i class="fa fa-btn fa-plus"></i> New Build</label>
+  <input class="modal-state" id="newbuild" type="checkbox" />
+  <div class="modal-window">
+    <div class="modal-inner">
+      <label class="modal-close" for="newbuild"></label>
+      <h2>New Build</h2>
+      <form ng-submit="createNewBuild()" ng-controller="BuildCtrl">
+          <label for="build-name">Name</label>
+          <input type="text" id="build-name" name="build-name" ng-model="newBuild.name" />
+          <label for="build-description">Description</label>
+          <textarea id="build-description" ng-model="newBuild.description" name="build-description" cols="30" rows="4"></textarea>
+          <div class="button-group">
+              <label>
+                  <input type="radio" name="build-vc" id="build-vc-git" value="git" ng-model="newBuild.vc_type" checked>
+                  <span class="button-group-item">Git</span>
+              </label>
+              <label>
+                  <input type="radio" name="build-vc" id="build-vc-svn" value="svn" ng-model="newBuild.vc_type">
+                  <span class="button-group-item">SVN</span>
+              </label>
+          </div>
+          <label for="build-vc-url">Repository URL</label>
+          <input type="text" name="build-vc-url" ng-model="newBuild.vc_url" id="build-vc-url" placeholder="http://git@example.com/my/repository.git">
+
+          <button type="submit" class="btn submit">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+

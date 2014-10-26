@@ -347,7 +347,7 @@ header.sub-navigation {
         position: relative;
         z-index: 9999;
 
-        h1 {
+        h1.breadcrumbs {
             @include span-columns(10);
             @include omega();
             font-weight: normal;
@@ -358,17 +358,23 @@ header.sub-navigation {
                 text-decoration: underline;
             }
 
+            ul {
+                list-style-type: none;
+                li {
+                    float: left;
+                }
+            }
+
             a.active {
                 font-weight: bold;
             }
 
-            .breadcrumb-divider {
-               margin: 0 0.25em;
+            .fa-angle-right {
+                margin: 0 0.25em 0 0;
             }
         }
 
         .tools {
-            line-height: $navigation-height;
             @include span-columns(2);
         }
     }

@@ -27,7 +27,8 @@ func main() {
 	router.HandleFunc("/login", routes.Login).Methods("POST")
 	router.HandleFunc("/logout", routes.Logout).Methods("GET")
 
-	router.HandleFunc("/builds", routes.BuildsJson).Methods("GET")
+	router.HandleFunc("/builds", routes.ListBuilds).Methods("GET")
+	router.HandleFunc("/builds", routes.CreateBuild).Methods("POST")
 
 	n := negroni.Classic()
 	n.Use(gzip.Gzip(gzip.DefaultCompression))

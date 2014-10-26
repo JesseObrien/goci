@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/xyproto/permissions"
 	"gopkg.in/unrolled/render.v1"
 	"net/http"
@@ -83,10 +84,16 @@ type Build struct {
 	Name string `json: "name"`
 }
 
-func (r *Routes) BuildsJson(w http.ResponseWriter, req *http.Request) {
+func (r *Routes) ListBuilds(w http.ResponseWriter, req *http.Request) {
 
 	b := []Build{Build{Id: 1, Name: "Beta"}, Build{Id: 2, Name: "Alpha"}}
 
 	r.renderer.JSON(w, http.StatusOK, b)
 
+}
+
+func (r *Routes) CreateBuild(w http.ResponseWriter, req *http.Request) {
+	// @TODO figure out why this isn't getting vars from angular
+	req.ParseForm()
+	fmt.Println(req.PostForm)
 }

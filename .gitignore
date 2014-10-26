@@ -2,3 +2,4 @@
 fresh
 tmp/
 *.lock
+dump.rdb

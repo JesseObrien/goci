@@ -32,7 +32,7 @@ func NewRoutes() *Routes {
 }
 
 func (r *Routes) GetIndex(w http.ResponseWriter, req *http.Request) {
-	r.Render(w, http.StatusOK, "landing", nil)
+	r.LayoutRender(w, http.StatusOK, "layout", nil)
 }
 
 func (r *Routes) GetRegister(w http.ResponseWriter, req *http.Request) {
@@ -67,9 +67,9 @@ func (r *Routes) Login(w http.ResponseWriter, req *http.Request) {
 
 	}
 
-	r.userstate.Login(w, username)
+	// r.userstate.Login(w, username)
 
-	http.Redirect(w, req, "/", http.StatusFound)
+	http.Redirect(w, req, "/builds", http.StatusFound)
 }
 
 func (r *Routes) Logout(w http.ResponseWriter, req *http.Request) {
@@ -78,19 +78,15 @@ func (r *Routes) Logout(w http.ResponseWriter, req *http.Request) {
 	http.Redirect(w, req, "/", http.StatusFound)
 }
 
-type NavItem struct {
-	Label  string
-	Url    string
-	Active bool
+type Build struct {
+	Id   int    `json: "id"`
+	Name string `json: "name"`
 }
 
-func (r *Routes) Builds(w http.ResponseWriter, req *http.Request) {
-	data := struct {
-		Pagename string
-		Subnav   []NavItem
-	}{
-		"Builds",
-		[]NavItem{NavItem{Label: "Builds", Url: "/builds", Active: true}},
-	}
-	r.LayoutRender(w, http.StatusOK, "builds", data)
+func (r *Routes) BuildsJson(w http.ResponseWriter, req *http.Request) {
+
+	b := []Build{Build{Id: 1, Name: "Beta"}, Build{Id: 2, Name: "Alpha"}}
+
+	r.renderer.JSON(w, http.StatusOK, b)
+
 }

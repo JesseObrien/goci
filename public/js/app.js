@@ -6,6 +6,10 @@ gociApp.config(function($routeProvider, $interpolateProvider) {
 		templateUrl: 'partials/build-list.html',
 		controller: 'BuildCtrl'
 	})
+    .when('/builds/new', {
+        templateUrl: 'partials/new-build.html',
+        controller: 'BuildCtrl'
+    })
 	.otherwise({
 		redirectTo: '/builds'
 	});

@@ -2244,12 +2244,13 @@ ul.build.list {
     padding-top: 20px;
     padding-bottom: 20px; }
     ul.build.list li .stats {
-      position: absolute;
-      right: 0;
-      top: 5px;
-      font-size: 14px;
-      font-weight: bold;
-      color: #999; }
+      float: right; }
+      ul.build.list li .stats .fa {
+        margin: 0 2px; }
+      ul.build.list li .stats .fa-warning {
+        color: #C0392B; }
+      ul.build.list li .stats .fa-leaf {
+        color: #2ECC71; }
     ul.build.list li h3.name {
       font-size: 20px; }
     ul.build.list li p.description {

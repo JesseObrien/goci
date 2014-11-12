@@ -12,12 +12,19 @@ ul.build.list {
         @include padding(20px null 20px null);
 
         .stats {
-            position: absolute;
-            right: 0;
-            top: 5px;
-            font-size: 14px;
-            font-weight: bold;
-            color: $muted-text;
+            float: right;
+
+            .fa {
+                margin: 0 2px;
+            }
+
+            .fa-warning {
+                color: $flat-pomegranate;
+            }
+
+            .fa-leaf {
+                color: $flat-emerald;
+            }
         }
 
         h3.name {
@@ -25,13 +32,11 @@ ul.build.list {
         }
 
         p.description {
-            color: #555;    
+            color: #555;
             font-size: 14px;
             margin-top: 10px;
             max-width: 500px;
         }
-        
-        
     }
 }
 

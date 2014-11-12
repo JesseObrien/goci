@@ -1,9 +1,9 @@
 <ul class="build list">
     <li ng-repeat="build in builds">
         <div class="stats">
-            </i><i class="fa fa-check"></i> 100 <i class="fa fa-times"></i> 20
+            <i ng-repeat="success in build.LastTen" class="[[ success ? 'fa fa-leaf' : 'fa fa-warning' ]]"></i>
         </div>
-        <h3 class="name"><a href="#">[[ build.Name ]]</a></h3>
+        <h3 class="name"><i class="fa fa-code-fork"></i> <a href="#">[[ build.Name ]]</a></h3>
         <p class="description">This is the acme development site.</p>
     </li>
 </ul>

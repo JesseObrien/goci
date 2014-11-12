@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
+	"github.com/mholt/binding"
 	"github.com/xyproto/permissions"
 	"gopkg.in/unrolled/render.v1"
 	"net/http"
+	"net/url"
 )
 
 type Routes struct {
@@ -80,20 +81,39 @@ func (r *Routes) Logout(w http.ResponseWriter, req *http.Request) {
 }
 
 type Build struct {
-	Id   int    `json: "id"`
-	Name string `json: "name"`
+	Id          int             `json: "id"`
+	Name        string          `json: "name"`
+	Description string          `json: "description"`
+	LastTen     map[string]bool `json: "LastTen"`
+	VcType      string          `json: "vc_type"`
+	VcURL       url.URL
+}
+
+func (b *Build) FieldMap() binding.FieldMap {
+	return binding.FieldMap{
+		&b.Name:        "name",
+		&b.Description: "description",
+		&b.VcType:      "vc_type",
+		&b.VcURL:       "vc_url",
+	}
 }
 
 func (r *Routes) ListBuilds(w http.ResponseWriter, req *http.Request) {
 
-	b := []Build{Build{Id: 1, Name: "Beta"}, Build{Id: 2, Name: "Alpha"}}
+	b := []Build{
+		Build{Id: 1, Name: "Beta", LastTen: map[string]bool{"1": true, "2": false, "3": true, "4": true, "5": true, "6": false, "7": true, "8": false, "9": true, "10": true}},
+		Build{Id: 2, Name: "Alpha", LastTen: map[string]bool{"1": true, "2": false, "3": true, "4": true, "5": true, "6": false, "7": true, "8": false, "9": true, "10": true}},
+	}
 
 	r.renderer.JSON(w, http.StatusOK, b)
-
 }
 
 func (r *Routes) CreateBuild(w http.ResponseWriter, req *http.Request) {
 	// @TODO figure out why this isn't getting vars from angular
-	req.ParseForm()
-	fmt.Println(req.PostForm)
+	newBuild := new(Build)
+	if errs := binding.Bind(req, newBuild); errs != nil {
+		panic(errs)
+	}
+
+	r.renderer.JSON(w, http.StatusOK, newBuild)
 }
